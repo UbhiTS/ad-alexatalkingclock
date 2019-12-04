@@ -44,3 +44,6 @@ key | optional | type | default | description
 
 ## Thank you for your time! (get it ;)
 Ever since I've set this up in my home, it's become an indispensable part of our lives. It's amazing to see how a simple reminder of the current time can make people efficient :), I hope this app helps someone else as it has helped me and my family. 
+
+# License
+[Apache-2.0](LICENSE). By providing a contribution, you agree the contribution is licensed under Apache-2.0. This is required for Home Assistant contributions.
