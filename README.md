@@ -45,9 +45,13 @@ key | optional | type | default | description
 ## Thank you for your time! (get it ;)
 Ever since I've set this up in my home, it's become an indispensable part of our lives. It's amazing to see how a simple reminder of the current time can make people efficient :), I hope this app helps someone else as it has helped me and my family. 
 
-If you like my work and feel gracious, you can buy me a [beer](https://www.buymeacoffee.com/ubhits) here
-[![beer_badge](https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg)](https://www.buymeacoffee.com/ubhits)
+If you like my work and feel gracious, you can buy me a beer below ;)
 
+<a href="https://www.buymeacoffee.com/ubhits" target="_blank">
+<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
+     alt="Buy Me A Beer" 
+     style="height:41px !important; width:174px !important;" />
+</a>
 
 # License
 [Apache-2.0](LICENSE). By providing a contribution, you agree the contribution is licensed under Apache-2.0. This is required for Home Assistant contributions.
