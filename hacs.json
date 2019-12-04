@@ -1,5 +1,6 @@
 {
     "name": "Alexa Talking Clock",
-    "country": "US",
-    "render_readme": "true"
+    "content_in_root" : "false",
+    "render_readme": "true",
+    "domains": ["media_player"]
 }
