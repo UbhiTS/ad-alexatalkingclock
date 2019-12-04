@@ -13,7 +13,7 @@ Now, Alexa greets us in the morning, keeps on reminding us of the time every hal
 
 Use [HACS](https://github.com/custom-components/hacs) or [download](https://github.com/UbhiTS/HASS-AlexaTalkingClock/tree/master/apps/alexa_talking_clock) the `alexa_talking_clock` directory from inside the `apps` directory here to your local `apps` directory, then add the configuration to enable the `alexa_talking_clock` module.
 
-## App configuration
+## App Configuration
 
 ```yaml
 alexa_talking_clock:
@@ -42,4 +42,5 @@ key | optional | type | default | description
 `announce_half_hour` | False | bool | | Announce every half hour (It's 8 AM, It's 8:30 AM, It's 9 AM)
 `announce_quarter_hour` | False | bool | | Announce every 15 minutes (It's 8 AM, It's 8:15 AM, It's 8:30 AM, It's 8:45 AM, It's 9 AM)
 
+## Thank you for your time! (get it ;)
 Ever since I've set this up in my home, it's become an indispensable part of our lives. It's amazing to see how a simple reminder of the current time can make people efficient :), I hope this app helps someone else as it has helped me and my family. 
