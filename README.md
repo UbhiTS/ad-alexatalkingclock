@@ -4,7 +4,7 @@
 
 This app was a result of my amazing wife's inability (who is a mother of 2 beautiful princesses BTW) to manage her time wisely ;). So this is dedicated to my wife Reena, without whom this world would not be worth my time (no pun intended!). 
 
-However, this also wasnt possible without the amazing work done by the community at HASS, and of Keaton Taylor and Alan Tse on the Alexa Media Player integration for Home Assistant. *https://github.com/custom-components/alexa_media_player*
+However, this also wasnt possible without the amazing work done by the community at [Home Assistant](https://www.home-assistant.io/), and of Keaton Taylor and Alan Tse on their Alexa Media Player integration for Home Assistant. *https://github.com/custom-components/alexa_media_player*
 
 Now, Alexa greets us in the morning, keeps on reminding us of the time every half hour (politely) from 7 AM to 9 PM where it courteously tells us the time and also greets us with a good morning, good afternoon, and a good night & sweet dreams. How cool is that!
 
