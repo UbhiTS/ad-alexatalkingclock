@@ -2,7 +2,7 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
-This app was a result of my amazing wife's inability (who is a mother of 2 beautiful princesses BTW) to manage her time wisely ;). So this app is dedicated to my wife Reena, without whom this world would not be worth my time. 
+This app was a result of my amazing wife's inability (who is a mother of 2 beautiful princesses BTW) to manage her time wisely ;). So this is dedicated to my wife Reena, without whom this world would not be worth my time (no pun intended!). 
 
 However, this also wasnt possible without the amazing work done by the community at HASS, and of Keaton Taylor and Alan Tse on the Alexa Media Player integration for Home Assistant. *https://github.com/custom-components/alexa_media_player*
 
