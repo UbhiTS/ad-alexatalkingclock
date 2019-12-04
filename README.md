@@ -8,7 +8,7 @@ However, this also wasnt possible without the amazing work done by the community
 
 Ever since I've set this up in my home, it's become an indispensable part of our lives. It's amazing to see how a simple reminder of the current time can make people efficient :), I hope this app helps someone else as it has helped me and my family. 
 
-Now, Alexa greets us in the morning, keeps on reminding us of the time every half hour (politely) from 7 AM to 9 PM where it courteously greets us with a good morning, good afternoon, and a good night and sweet dreams without us asking Alexa the time. How cool is that!
+Now, Alexa greets us in the morning, keeps on reminding us of the time every half hour (politely) from 7 AM to 9 PM where it courteously tells us the time and also greets us with a good morning, good afternoon, and a good night & sweet dreams. How cool is that!
 
 ## Installation
 **NEEDS THE Alexa Media Player HACS Integration from Keaton Taylor and Alan Tse**
