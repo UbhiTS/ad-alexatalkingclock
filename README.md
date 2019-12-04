@@ -2,18 +2,18 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
-This app was a result of my amazing wife's inability (who is a mother of 2 beautiful princesses BTW) to manage her time wisely ;). So this is dedicated to my wife Reena, without whom this world would not be worth my time (no pun intended!). 
+This app was a result of my amazing wife's inability (who is a mother of 2 beautiful princesses BTW) to manage her time wisely ;). So this is dedicated to my wife Reena, without whom this world would not be worth my time :), no pun intended! 
 
-However, this also wasnt possible without the amazing work done by the community at [Home Assistant](https://www.home-assistant.io/), and of Keaton Taylor and Alan Tse on their Alexa Media Player integration for Home Assistant. *https://github.com/custom-components/alexa_media_player*
+This also wasn't possible without the amazing work done by the community at **[Home Assistant](https://www.home-assistant.io/)**, and of Keaton Taylor and Alan Tse on their **Alexa Media Player integration** for Home Assistant. *https://github.com/custom-components/alexa_media_player*
 
-Now, Alexa greets us in the morning, keeps on reminding us of the time every half hour (politely) from 7 AM to 9 PM where it courteously tells us the time and also greets us with a good morning, good afternoon, and a good night & sweet dreams. How cool is that!
+Now, Alexa keeps on reminding us of the time every half hour (politely) from 7 AM to 9 PM and also courteously greets us with good morning, good afternoon, and good night & sweet dreams all without us lifting a finger. Sweet!
 
 ## Installation
 **NEEDS THE [Alexa Media Player](https://github.com/custom-components/alexa_media_player) HACS Integration from Keaton Taylor and Alan Tse**
 
 Use [HACS](https://github.com/custom-components/hacs) or [download](https://github.com/UbhiTS/HASS-AlexaTalkingClock/tree/master/apps/alexa_talking_clock) the `alexa_talking_clock` directory from inside the `apps` directory here to your local `apps` directory, then add the configuration to enable the `alexa_talking_clock` module.
 
-## App Configuration
+## App Configuration (config/appdaemon/apps/apps.yaml)
 
 ```yaml
 alexa_talking_clock:
