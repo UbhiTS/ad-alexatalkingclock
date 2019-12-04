@@ -1,4 +1,4 @@
-# HASS App Daemon Alexa Talking Clock
+# HASS AppDaemon : Alexa Talking Clock App
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
