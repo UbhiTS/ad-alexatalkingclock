@@ -2,11 +2,7 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
-This app was a result of my amazing wife's inability (who is a mother of 2 beautiful princesses BTW) to manage her time wisely ;). So this is dedicated to my wife Reena, without whom this world would not be worth my time :), no pun intended! 
-
-This also wasn't possible without the amazing work done by the community at **[Home Assistant](https://www.home-assistant.io/)**, and of Keaton Taylor and Alan Tse on their **Alexa Media Player integration** for Home Assistant. *https://github.com/custom-components/alexa_media_player*
-
-Now, Alexa keeps on reminding us of the time every half hour (politely) from 7 AM to 9 PM and also courteously greets us with good morning, good afternoon, and good night & sweet dreams all without us lifting a finger. Sweet!
+Amazon Alexa will keep on reminding you of the time every half hour (politely) from 7 AM to 9 PM and also courteously greet with a good morning, good afternoon, and a good night & sweet dreams all without you having to lift a finger (or speak a word). Sweet!
 
 ## Installation
 **NEEDS THE [Alexa Media Player](https://github.com/custom-components/alexa_media_player) HACS Integration from Keaton Taylor and Alan Tse**
@@ -43,7 +39,11 @@ key | optional | type | default | description
 `announce_quarter_hour` | False | bool | | Announce every 15 minutes (It's 8 AM, It's 8:15 AM, It's 8:30 AM, It's 8:45 AM, It's 9 AM)
 
 ## Thank you for your time! (get it ;)
-Ever since I've set this up in my home, it's become an indispensable part of our lives. It's amazing to see how a simple reminder of the current time can make people efficient :), I hope this app helps someone else as it has helped me and my family. 
+This app was a result of my amazing wife's request (who is a mother of 2 beautiful princesses BTW) to help her manage her time wisely ;). So this is dedicated to my wife Reena, without whom this world would not be worth my time :) 
+
+This also wouldn't be possible without the amazing work done by the developers and community at **[Home Assistant](https://www.home-assistant.io/)**, and of Keaton Taylor and Alan Tse on their **Alexa Media Player integration** for Home Assistant. *https://github.com/custom-components/alexa_media_player*
+
+Ever since we've set this up in our home, it has become an indispensable part of our lives. It's amazing to see how a simple reminder of the current time in the day can make people more efficient :), I hope this app helps others as it has helped us. 
 
 If you like my work and feel gracious, you can buy me a beer below ;)
 
