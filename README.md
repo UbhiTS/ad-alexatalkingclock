@@ -1,4 +1,4 @@
-# Alexa Talking Clock App : HASS AppDaemon :chicken:
+# Alexa Talking Clock AppDaemon App for Home Assistant (HASS) :chicken:
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
