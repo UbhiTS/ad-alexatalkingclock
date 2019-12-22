@@ -76,7 +76,7 @@ class AlexaTalkingClock(hass.Hass):
   def time_announce(self, kwargs):
     now = datetime.datetime.now()
     msg = self.time_to_text(now.hour, now.minute)
-    
+
     if msg is not None:
       self.log("HOUR_ANNOUNCE_MESSAGE " + msg)
       self.call_service("notify/alexa_media", data = {"type":"announce", "method":"all"}, target = self.alexa, message = msg)
@@ -84,30 +84,36 @@ class AlexaTalkingClock(hass.Hass):
 
   def time_to_text(self, hour, minute):
     
-    if hour >= self.start_hour and hour <= self.end_hour:
-      
-      if hour == self.start_hour and minute < self.start_minute:
-        return
-      if hour == self.end_hour and minute > self.end_minute:
-        return
-
-      ampm_str = "AM" if hour <= 11 else "PM"
-      
-      if hour == 7 and minute == 0:
-        return "Good morning. It's 7 AM."
-      elif hour == 12 and minute == 0:
-        return "Good afternoon. It's 12 PM."
-      elif hour == 17 and minute == 0:
-        return "Good Evening. It's 5 PM."
-      elif hour == 21:
-        return "It's 9 PM. Good night. And sweet dreams."
-        
-      hour = hour - 12 if hour > 12 else hour
+    prefix = ""
+    postfix = ""
+    time_speech = ""
     
-      if minute == 0:
-        return "It's " + str(hour) + " " + ampm_str
-      else:
-        return "It's " + str(hour) + ":" + str(minute) + " " + ampm_str
+    if hour < self.start_hour and hour > self.end_hour:
+      return
+    if hour == self.start_hour and minute < self.start_minute:
+      return
+    if hour == self.end_hour and minute > self.end_minute:
+      return
+
+    ampm_str = "AM" if hour <= 11 else "PM"
+    
+    if hour == self.start_hour and minute == self.start_minute and hour <= 11:
+      prefix = "Good morning."
+    elif hour == 12 and minute == 0:
+      prefix = "Good afternoon."
+    elif hour == 17 and minute == 0:
+      prefix = "Good evening."
+    elif hour == self.end_hour and minute == self.end_minute and hour >= 20:
+      postfix = "Good night. And sweet dreams."
+      
+    hour = hour - 12 if hour > 12 else hour
+  
+    if minute == 0:
+      time_speech = "It's " + str(hour) + " " + ampm_str
+    else:
+      time_speech = "It's " + str(hour) + ":" + str(minute) + " " + ampm_str
+    
+    return prefix + time_speech + postfix
 
 
 class Frequency:
