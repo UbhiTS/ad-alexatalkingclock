@@ -26,8 +26,6 @@ class AlexaTalkingClock(hass.Hass):
     
     self.log("INITIALIZE start:" + str(self.next_start) + ", frequency:" + str(self.frequency.interval) + ", times:" + str(self.frequency.announce_times))
     
-    self.time_announce(None)
-    
     if self.frequency.interval is not None:
       self.run_every(self.time_announce, self.next_start, (60 * self.frequency.interval))
 
