@@ -26,6 +26,8 @@ class AlexaTalkingClock(hass.Hass):
     
     self.log("INITIALIZE start:" + str(self.next_start) + ", frequency:" + str(self.frequency.interval) + ", times:" + str(self.frequency.announce_times))
     
+    self.time_announce(None)
+    
     if self.frequency.interval is not None:
       self.run_every(self.time_announce, self.next_start, (60 * self.frequency.interval))
 
@@ -88,7 +90,7 @@ class AlexaTalkingClock(hass.Hass):
     postfix = ""
     time_speech = ""
     
-    if hour < self.start_hour and hour > self.end_hour:
+    if hour < self.start_hour or hour > self.end_hour:
       return
     if hour == self.start_hour and minute < self.start_minute:
       return
@@ -109,11 +111,11 @@ class AlexaTalkingClock(hass.Hass):
     hour = hour - 12 if hour > 12 else hour
   
     if minute == 0:
-      time_speech = "It's " + str(hour) + " " + ampm_str
+      time_speech = "It's " + str(hour) + " " + ampm_str + "."
     else:
-      time_speech = "It's " + str(hour) + ":" + str(minute) + " " + ampm_str
+      time_speech = "It's " + str(hour) + ":" + str(minute) + " " + ampm_str + "."
     
-    return prefix + time_speech + postfix
+    return prefix + " " + time_speech + " " + postfix
 
 
 class Frequency:
