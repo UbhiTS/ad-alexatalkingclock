@@ -6,7 +6,17 @@ import datetime
 # Developed by @UbhiTS on GitHub
 #
 # Args:
-#
+# alexa_talking_clock:
+#   module: alexa_talking_clock
+#   class: AlexaTalkingClock
+#   alexa: media_player.kitchen_alexa
+#   start_hour: 7
+#   start_minute: 30
+#   end_hour: 21
+#   end_minute: 30
+#   announce_hour: true
+#   announce_half_hour: true
+#   announce_quarter_hour: false
 
 class AlexaTalkingClock(hass.Hass):
 
