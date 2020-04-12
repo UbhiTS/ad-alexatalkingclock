@@ -34,10 +34,12 @@ class AlexaTalkingClock(hass.Hass):
     self.frequency = self.get_frequency()
     self.next_start = self.get_next_start()
     
-    self.log("INITIALIZE start:" + str(self.next_start) + ", frequency:" + str(self.frequency.interval) + ", times:" + str(self.frequency.announce_times))
+    if self.frequency.interval is None:
+      raise Exception("ERROR: No announce frequency defined. Please set at least one frequency interval")
     
-    if self.frequency.interval is not None:
-      self.run_every(self.time_announce, self.next_start, (60 * self.frequency.interval))
+    self.run_every(self.time_announce, self.next_start, (60 * self.frequency.interval))
+    
+    self.log("INITIALIZED: Start " + str(self.next_start.strftime("%H:%M:%S")) + ", Frequency " + str(self.frequency.interval) + ", Times " + str(self.frequency.announce_times))
 
 
   def get_frequency(self):
@@ -74,6 +76,7 @@ class AlexaTalkingClock(hass.Hass):
     for min in self.frequency.announce_times:
       if now.minute < min:
         next_start_min = min
+        break
     
     if next_start_min is None:
       next = now.replace(minute = 0, second = 0) + datetime.timedelta(hours=1)
