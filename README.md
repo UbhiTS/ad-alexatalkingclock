@@ -5,10 +5,10 @@
 Amazon Alexa will keep on reminding you of the time from morning till night and also courteously greet with a good morning, good afternoon, and a good night & sweet dreams all without you having to lift a finger (or speak a word). Sweet!
 
 Please ⭐ this repo if you like my work and also check out my other repos like
-- [Home Assistant Steroids Configuration - Ataraxis](https://github.com/UbhiTS/ha-config-ataraxis)
+- [Home Assistant 'STEROIDS' Configuration](https://github.com/UbhiTS/ha-config-ataraxis)
 
 Also, if you want to see a walkthrough of my Home Assistant configuration, I have my video walkthrough on youtube below
-- [Home Automation on STEROIDS : Video Walkthrough](https://youtu.be/qqktLE9_45A)
+- [Home Automation on 'STEROIDS' : Video Walkthrough](https://youtu.be/qqktLE9_45A)
 
 ## Installation
 **NEEDS THE [Alexa Media Player](https://github.com/custom-components/alexa_media_player) HACS Integration from Keaton Taylor and Alan Tse**
