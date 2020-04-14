@@ -8,7 +8,7 @@ Please ⭐ this repo if you like my work and also check out my other repos like
 - [Home Assistant Steroids Configuration - Ataraxis](https://github.com/UbhiTS/ha-config-ataraxis)
 
 Also, if you want to see a walkthrough of my Home Assistant configuration, I have my video walkthrough on youtube below
-- [Home Automation on Steroids : Video Walkthrough](https://youtu.be/qqktLE9_45A)
+- [Home Automation on STEROIDS : Video Walkthrough](https://youtu.be/qqktLE9_45A)
 
 ## Installation
 **NEEDS THE [Alexa Media Player](https://github.com/custom-components/alexa_media_player) HACS Integration from Keaton Taylor and Alan Tse**
