@@ -48,7 +48,7 @@ key | optional | type | default | description
 -- | -- | -- | -- | --
 `module` | False | string | alexa_talking_clock | The module name of the app.
 `class` | False | string | AlexaTalkingClock | The name of the Class.
-`alexa` | False | string | #alexa# | The Alexa device to target for the time reminder speech. You need the Alexa Media Player integration alive and kickin before you install this app.
+`alexa` | False | string | # alexa_media_player # | The Alexa device to target for the time reminder speech. You need the Alexa Media Player integration alive and kickin before you install this app.
 `whisper` | True | bool | False | Whisper Mode. Set "Bell" to False and "Rate" to 50 for a creepy time announcement 
 `pitch_offset` | True | int | 0 | Set between -33 and 50. Default 0
 `volume_offset` | True | int | 0 | Set between -40 and 4. Default 0
