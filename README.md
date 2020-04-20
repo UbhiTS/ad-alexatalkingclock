@@ -28,7 +28,7 @@ alexa_talking_clock:
   rate: 100 # 20 to 250, default 100
   announce_bell: true
   announce_half_hour: true
-  announce_quarter_hour: true
+  announce_quarter_hour: false
   start_hour: 7
   start_minute: 30
   end_hour: 21
