@@ -42,9 +42,9 @@ key | optional | type | default | description
 `class` | False | string | AlexaTalkingClock | The name of the Class.
 `alexa` | False | string | <alexa> | The Alexa device to target for the time reminder speech. You need the Alexa Media Player integration alive and kickin before you install this app.
 `whisper` | True | bool | False | Whisper Mode. Set "Bell" to False and "Rate" to 50 for a creepy time announcement 
-`pitch_offset` | True | bool | 0 | Set between -33 and 50. Default 0
-`volume_offset` | True | bool | 0 | Set between -40 and 4. Default 0
-`rate` | True | bool | 100 | Set between 20 to 250. Default 100
+`pitch_offset` | True | int | 0 | Set between -33 and 50. Default 0
+`volume_offset` | True | int | 0 | Set between -40 and 4. Default 0
+`rate` | True | int | 100 | Set between 20 to 250. Default 100
 `announce_bell` | True | bool | True | Enable or disable the announcement bell before the time speech
 `announce_half_hour` | True | bool | True | Announce every half hour (It's 8 AM, It's 8:30 AM, It's 9 AM)
 `announce_quarter_hour` | True | bool | False | Announce every 15 minutes (It's 8 AM, It's 8:15 AM, It's 8:30 AM, It's 8:45 AM, It's 9 AM)
