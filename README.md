@@ -3,6 +3,7 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
 ## New in v1.0.4: Multiple Alexas, Whisper Mode, Pitch, Volume, Rate and Bell Controls
+NOTE: * **Please update your apps.yaml with the new configuration structure** *
 
 <a href="https://www.buymeacoffee.com/ubhits" target="_blank">
 <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
