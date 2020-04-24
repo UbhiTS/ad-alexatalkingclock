@@ -9,7 +9,7 @@ import datetime
 #  module: alexa_talking_clock
 #  class: AlexaTalkingClock
 #  alexas:
-#    - media_player.upper_big_bedroom_alexa
+#    - media_player.bedroom_alexa
 #    - media_player.kitchen_alexa
 #  voice:
 #    volume_offset: 0 # -40 to 4, default 0
@@ -141,7 +141,7 @@ class AlexaTalkingClock(hass.Hass):
       msg = self.set_speech_parameters(time_speech)
       seconds = 0
       for alexa in self.alexas:
-        seconds = seconds + 4
+        seconds = seconds + 5
         self.run_in(self.announce_time, seconds, alexa = alexa, time_speech = time_speech, msg = msg)
 
   def announce_time(self, kwargs):
