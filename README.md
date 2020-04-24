@@ -31,7 +31,7 @@ alexa_talking_clock:
   module: alexa_talking_clock
   class: AlexaTalkingClock
   alexas:
-    - media_player.upper_big_bedroom_alexa
+    - media_player.bedroom_alexa
     - media_player.kitchen_alexa
   voice:
     volume_offset: 0 # -40 to 4, default 0
