@@ -2,45 +2,65 @@ import appdaemon.plugins.hass.hassapi as hass
 import datetime
  
 #
-# Talking Clock AppDeamon App for Home Assistant
+# Alexa Talking Clock AppDeamon App for Home Assistant
 # Developed by @UbhiTS on GitHub
 #
-# Args:
 #alexa_talking_clock:
 #  module: alexa_talking_clock
 #  class: AlexaTalkingClock
-#  alexa: media_player.kitchen_alexa
-#  whisper: false
-#  pitch_offset: 0 # -33 to 50, default 0
-#  volume_offset: 0 # -40 to 4, default 0
-#  rate: 100 # 20 to 250, default 100
-#  announce_bell: true
-#  announce_half_hour: true
-#  announce_quarter_hour: true
-#  start_hour: 7
-#  start_minute: 30
-#  end_hour: 21
-#  end_minute: 30
+#  alexas:
+#    - media_player.upper_big_bedroom_alexa
+#    - media_player.kitchen_alexa
+#  voice:
+#    volume_offset: 0 # -40 to 4, default 0
+#    pitch_offset: 0 # -33 to 50, default 0
+#    rate: 100 # 20 to 250, default 100
+#    whisper: false
+#  announcements:
+#    bell: true
+#    start_time: "07:30:00"
+#    end_time: "21:30:00"
+#    half_hour: true
+#    quarter_hour: true
 #  debug: false
 
 class AlexaTalkingClock(hass.Hass):
 
   def initialize(self):
     
-    self.alexa = self.args["alexa"]
-    self.whisper = bool(self.args["whisper"]) if "whisper" in self.args else False
-    self.pitch_offset = int(self.args["pitch_offset"]) if "pitch_offset" in self.args else 0
-    self.volume_offset = int(self.args["volume_offset"]) if "volume_offset" in self.args else 0
-    self.rate = int(self.args["rate"]) if "rate" in self.args else 100
-    self.announce_bell = bool(self.args["announce_bell"]) if "announce_bell" in self.args else True
+    self.alexas = self.args["alexas"]
+    
+    self.volume_offset = 0
+    self.pitch_offset = 0
+    self.rate = 100
+    self.whisper = False
+    
+    self.announce_bell = True
+    self.start_hour = 7
+    self.start_minute = 30
+    self.end_hour = 21
+    self.end_minute = 30
     self.announce_hour = True
-    self.announce_half_hour = bool(self.args["announce_half_hour"]) if "announce_half_hour" in self.args else True
-    self.announce_quarter_hour = bool(self.args["announce_quarter_hour"]) if "announce_quarter_hour" in self.args else False
-    self.start_hour = int(self.args["start_hour"]) if "start_hour" in self.args else 7
-    self.start_minute = int(self.args["start_minute"]) if "start_minute" in self.args else 30
-    self.end_hour = int(self.args["end_hour"]) if "end_hour" in self.args else 21
-    self.end_minute = int(self.args["end_minute"]) if "end_minute" in self.args else 30
-    self.debug = bool(self.args["debug"]) if "debug" in self.args else False
+    self.announce_half_hour = True
+    self.announce_quarter_hour = False
+    self.debug = False
+    
+    if self.args["voice"]:
+      self.volume_offset = int(self.args["voice"]["volume_offset"]) if "volume_offset" in self.args["voice"] else self.volume_offset
+      self.pitch_offset = int(self.args["voice"]["pitch_offset"]) if "pitch_offset" in self.args["voice"] else self.pitch_offset
+      self.rate = int(self.args["voice"]["rate"]) if "rate" in self.args["voice"] else self.rate
+      self.whisper = bool(self.args["voice"]["whisper"]) if "whisper" in self.args["voice"] else self.whisper
+
+    if self.args["announcements"]:
+      self.announce_bell = bool(self.args["announcements"]["bell"]) if "bell" in self.args["announcements"] else self.announce_bell
+      self.start_hour = int(self.args["announcements"]["start_time"].split(':')[0]) if "start_time" in self.args["announcements"] else self.start_hour
+      self.start_minute = int(self.args["announcements"]["start_time"].split(':')[1]) if "start_time" in self.args["announcements"] else self.start_minute
+      self.end_hour = int(self.args["announcements"]["end_time"].split(':')[0]) if "end_time" in self.args["announcements"] else self.end_hour
+      self.end_minute = int(self.args["announcements"]["end_time"].split(':')[1]) if "end_time" in self.args["announcements"] else self.end_minute
+      self.announce_half_hour = bool(self.args["announcements"]["announce_half_hour"]) if "announce_half_hour" in self.args["announcements"] else self.announce_half_hour
+      self.announce_quarter_hour = bool(self.args["announcements"]["announce_quarter_hour"]) if "announce_quarter_hour" in self.args["announcements"] else self.announce_quarter_hour
+
+    self.debug = bool(self.args["debug"]) if "debug" in self.args else self.debug
     
     if self.pitch_offset < -33: self.pitch_offset = -33
     if self.pitch_offset > 50: self.pitch_offset = 50
@@ -54,7 +74,12 @@ class AlexaTalkingClock(hass.Hass):
     
     self.run_every(self.time_announce, self.next_start, (60 * self.frequency.interval))
     
-    self.log("INITIALIZED: Start " + str(self.next_start.strftime("%H:%M:%S")) + ", Frequency " + str(self.frequency.interval) + ", Times " + str(self.frequency.announce_times))
+    log_message = f"INITIALIZED: " + \
+      f"Start {str(self.start_hour).zfill(2)}:{str(self.start_minute).zfill(2)}, " + \
+      f"End {str(self.end_hour).zfill(2)}:{str(self.end_minute).zfill(2)}, " + \
+      f"Next {str(self.next_start.strftime('%H:%M:%S'))}, " + \
+      f"Freq {str(self.frequency.interval)} {str(self.frequency.announce_times)}"
+    self.log(log_message)
 
     if self.debug: self.time_announce(None)
     
@@ -110,7 +135,8 @@ class AlexaTalkingClock(hass.Hass):
     if time_speech is not None:
       msg = self.set_speech_parameters(time_speech)
       self.log("HOUR_ANNOUNCE_MESSAGE " + time_speech)
-      self.call_service("notify/alexa_media", data = {"type": "announce" if self.announce_bell else "tts", "method": "all"}, target = self.alexa, message = msg)
+      for alexa in self.alexas:
+        self.call_service("notify/alexa_media", data = {"type": "announce" if self.announce_bell else "tts", "method": "all"}, target = alexa, message = msg)
 
 
   def set_speech_parameters(self, time_speech):
