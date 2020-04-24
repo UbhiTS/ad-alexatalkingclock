@@ -2,7 +2,7 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
-## New in v1.0.3: Whisper Mode, Pitch, Volume, Rate and Bell Controls
+## New in v1.0.4: Multiple Alexas, Whisper Mode, Pitch, Volume, Rate and Bell Controls
 
 <a href="https://www.buymeacoffee.com/ubhits" target="_blank">
 <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
@@ -29,18 +29,20 @@ Use [HACS](https://github.com/custom-components/hacs) or [download](https://gith
 alexa_talking_clock:
   module: alexa_talking_clock
   class: AlexaTalkingClock
-  alexa: media_player.kitchen_alexa
-  whisper: false
-  pitch_offset: 0 # -33 to 50, default 0
-  volume_offset: 0 # -40 to 4, default 0
-  rate: 100 # 20 to 250, default 100
-  announce_bell: true
-  announce_half_hour: true
-  announce_quarter_hour: false
-  start_hour: 7
-  start_minute: 30
-  end_hour: 21
-  end_minute: 30
+  alexas:
+    - media_player.upper_big_bedroom_alexa
+    - media_player.kitchen_alexa
+  voice:
+    volume_offset: 0 # -40 to 4, default 0
+    pitch_offset: 0 # -33 to 50, default 0
+    rate: 100 # 20 to 250, default 100
+    whisper: false
+  announcements:
+    bell: true
+    start_time: "07:30:00"
+    end_time: "21:30:00"
+    half_hour: true
+    quarter_hour: true
   debug: false
 ```
 
@@ -48,18 +50,16 @@ key | optional | type | default | description
 -- | -- | -- | -- | --
 `module` | False | string | alexa_talking_clock | The module name of the app.
 `class` | False | string | AlexaTalkingClock | The name of the Class.
-`alexa` | False | string | # alexa_media_player # | The Alexa device to target for the time reminder speech. You need the Alexa Media Player integration alive and kickin before you install this app.
-`whisper` | True | bool | False | Whisper Mode. Set "Bell" to False and "Rate" to 50 for a creepy time announcement 
-`pitch_offset` | True | int | 0 | Set between -33 and 50. Default 0
+`alexas` | False | list | # alexa_media_players # | The Alexa device(s) to target for the time reminder speech. You need the Alexa Media Player integration alive and kickin before you install this app.
 `volume_offset` | True | int | 0 | Set between -40 and 4. Default 0
+`pitch_offset` | True | int | 0 | Set between -33 and 50. Default 0
 `rate` | True | int | 100 | Set between 20 to 250. Default 100
-`announce_bell` | True | bool | True | Enable or disable the announcement bell before the time speech
-`announce_half_hour` | True | bool | True | Announce every half hour (It's 8 AM, It's 8:30 AM, It's 9 AM)
-`announce_quarter_hour` | True | bool | False | Announce every 15 minutes (It's 8 AM, It's 8:15 AM, It's 8:30 AM, It's 8:45 AM, It's 9 AM)
-`start_hour` | True | int | 7 | The hour to start time remiders. This is in 24h format.
-`start_minute` | True | int | 30 | The minute to start time reminders. This can be 0, 15, 30, 45
-`end_hour` | True | int | 21 | The hour to end time remiders. This is in 24h format.
-`end_minute` | True | int | 30 | The minute to end time reminders. This can be 0, 15, 30, 45
+`whisper` | True | bool | False | Whisper Mode. Set "Bell" to False and "Rate" to 50 for a creepy time announcement 
+`bell` | True | bool | True | Enable or disable the announcement bell before the time speech
+`start_time` | True | time | 07:30 | The time to start announcements. This is in 24h format.
+`end_time` | True | time | 21:30 | The time to end announcements. This is in 24h format.
+`half_hour` | True | bool | True | Announce every half hour (It's 8 AM, It's 8:30 AM, It's 9 AM)
+`quarter_hour` | True | bool | False | Announce every 15 minutes (It's 8 AM, It's 8:15 AM, It's 8:30 AM, It's 8:45 AM, It's 9 AM)
 `debug` | True | bool | False | Announces time instantly when you save the apps.yaml. Also, when set, will not honor start and end times and speak throughout the day and night
 
 ## Thank you for your time! (get it ;)
