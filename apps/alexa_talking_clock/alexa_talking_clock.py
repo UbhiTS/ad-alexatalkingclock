@@ -45,20 +45,20 @@ class AlexaTalkingClock(hass.Hass):
     self.announce_quarter_hour = False
     self.debug = False
     
-    if self.args["voice"]:
+    if "voice" in self.args:
       self.volume_offset = int(self.args["voice"]["volume_offset"]) if "volume_offset" in self.args["voice"] else self.volume_offset
       self.pitch_offset = int(self.args["voice"]["pitch_offset"]) if "pitch_offset" in self.args["voice"] else self.pitch_offset
       self.rate = int(self.args["voice"]["rate"]) if "rate" in self.args["voice"] else self.rate
       self.whisper = bool(self.args["voice"]["whisper"]) if "whisper" in self.args["voice"] else self.whisper
 
-    if self.args["announcements"]:
+    if "announcements" in self.args:
       self.announce_bell = bool(self.args["announcements"]["bell"]) if "bell" in self.args["announcements"] else self.announce_bell
       self.start_hour = int(self.args["announcements"]["start_time"].split(':')[0]) if "start_time" in self.args["announcements"] else self.start_hour
       self.start_minute = int(self.args["announcements"]["start_time"].split(':')[1]) if "start_time" in self.args["announcements"] else self.start_minute
       self.end_hour = int(self.args["announcements"]["end_time"].split(':')[0]) if "end_time" in self.args["announcements"] else self.end_hour
       self.end_minute = int(self.args["announcements"]["end_time"].split(':')[1]) if "end_time" in self.args["announcements"] else self.end_minute
-      self.announce_half_hour = bool(self.args["announcements"]["announce_half_hour"]) if "announce_half_hour" in self.args["announcements"] else self.announce_half_hour
-      self.announce_quarter_hour = bool(self.args["announcements"]["announce_quarter_hour"]) if "announce_quarter_hour" in self.args["announcements"] else self.announce_quarter_hour
+      self.announce_half_hour = bool(self.args["announcements"]["half_hour"]) if "half_hour" in self.args["announcements"] else self.announce_half_hour
+      self.announce_quarter_hour = bool(self.args["announcements"]["quarter_hour"]) if "quarter_hour" in self.args["announcements"] else self.announce_quarter_hour
 
     self.debug = bool(self.args["debug"]) if "debug" in self.args else self.debug
     
