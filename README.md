@@ -8,12 +8,6 @@
 ### SONOS SPEAKER: Set Bell: False (kudos and thanks to @5and0) 
 NOTE: * **Please update your apps.yaml with the new configuration structure** *
 
-<a href="https://www.buymeacoffee.com/ubhits" target="_blank">
-<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
-     alt="Buy Me A Beer" 
-     style="height:41px !important; width:174px !important;" />
-</a>
-
 Amazon Alexa will keep on reminding you of the time from morning till night and also courteously greet with a good morning, good afternoon, and a good night & sweet dreams all without you having to lift a finger (or speak a word). Sweet!
 
 Please ⭐ this repo if you like my work and also check out my other repos like
