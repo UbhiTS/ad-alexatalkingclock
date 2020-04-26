@@ -4,7 +4,7 @@
 
 
      
-## New in v2.0.0: Multiple Alexas, Whisper Mode, Pitch, Volume, Rate, Bell Controls & SONOS support
+## New in v2.0.4: Multiple Alexas, Whisper Mode, Pitch, Volume, Rate, Bell & SONOS support
 ### SONOS SPEAKER: Set Bell: False (kudos and thanks to @5and0) 
 NOTE: * **Please update your apps.yaml with the new configuration structure** *
 
