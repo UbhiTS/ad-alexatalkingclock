@@ -42,7 +42,7 @@ alexa_talking_clock:
     rate: 100 # 20 to 250, default 100
     whisper: false
   announcements:
-    bell: true
+    bell: true # for SONOS, set to False
     start_time: "07:30:00"
     end_time: "21:30:00"
     half_hour: true
@@ -59,7 +59,7 @@ key | optional | type | default | description
 `pitch_offset` | True | int | 0 | Set between -33 and 50. Default 0
 `rate` | True | int | 100 | Set between 20 to 250. Default 100
 `whisper` | True | bool | False | Whisper Mode. Set "Bell" to False and "Rate" to 50 for a creepy time announcement 
-`bell` | True | bool | True | Enable or disable the announcement bell before the time speech
+`bell` | True | bool | True | Enable or disable the Alexa announcement bell before the time speech. For SONOS, set to False
 `start_time` | True | time | 07:30 | The time to start announcements. This is in 24h format.
 `end_time` | True | time | 21:30 | The time to end announcements. This is in 24h format.
 `half_hour` | True | bool | True | Announce every half hour (It's 8 AM, It's 8:30 AM, It's 9 AM)
