@@ -146,7 +146,7 @@ class AlexaTalkingClock(hass.Hass):
 
   def announce_time(self, kwargs):
     self.log(f"TIME_ANNOUNCE {kwargs['time_speech']}: {kwargs['alexa']}")
-    self.call_service("notify/alexa_media", data = {"type": "announce" if self.announce_bell else "tts", "method": "all"}, target = kwargs["alexa"], message = kwargs["msg"])
+    self.call_service("notify/alexa_media", data = {"type": "announce" if self.announce_bell else "tts", "method": "all"}, target = kwargs["alexa"], message = kwargs["msg"], title = kwargs["time_speech"])
 
 
   def set_speech_parameters(self, time_speech):
