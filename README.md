@@ -5,7 +5,7 @@
 
      
 ## New in v2.0.4: Multiple Alexas, Whisper Mode, Pitch, Volume, Rate, Bell & SONOS
-### SONOS SPEAKER: Set Bell: False (kudos and thanks to @5and0) 
+### SONOS: Set Bell: False (kudos and thanks to @5and0) 
 NOTE: * **Please update your apps.yaml with the new configuration structure** *
 
 Amazon Alexa will keep on reminding you of the time from morning till night and also courteously greet with a good morning, good afternoon, and a good night & sweet dreams all without you having to lift a finger (or speak a word). Sweet!
