@@ -150,8 +150,8 @@ class AlexaTalkingClock(hass.Hass):
 
 
   def set_speech_parameters(self, time_speech):
-    prefix = "<speak>"
-    postfix = "</speak>"
+    prefix = ""
+    postfix = ""
     
     if self.whisper:
       prefix = prefix + "<amazon:effect name='whispered'>"
