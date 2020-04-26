@@ -5,7 +5,7 @@
 
      
 ## New in v2.0.0: Multiple Alexas, Whisper Mode, Pitch, Volume, Rate and Bell Controls
-## Thanks to @5and0, for Sonos Speaker set Bell: False 
+### Thanks to @5and0, for Sonos Speaker set Bell: False 
 NOTE: * **Please update your apps.yaml with the new configuration structure** *
 
 <a href="https://www.buymeacoffee.com/ubhits" target="_blank">
