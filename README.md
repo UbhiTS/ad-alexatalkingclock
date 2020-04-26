@@ -1,4 +1,4 @@
-# Alexa (& Sonos) Talking Clock : AppDaemon App (HASS) :chicken:
+# Alexa (& Sonos) Talking Clock : AppDaemon (HASS) :chicken:
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
