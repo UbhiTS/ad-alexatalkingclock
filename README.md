@@ -2,7 +2,7 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
-## New in v2.0.4: Multiple Alexas, Whisper Mode, Pitch, Volume, Rate, Bell & SONOS
+## New in v2.0.0: Multiple Alexas, Whisper Mode, Pitch, Volume, Rate, Bell & SONOS
 ### SONOS: Set Bell:False and remove the voice effects section (kudos to @5and0) 
 NOTE: * **Please update your apps.yaml with the new configuration structure** *
 
