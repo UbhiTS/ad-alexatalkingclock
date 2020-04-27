@@ -21,7 +21,7 @@ Also, if you want to see a walkthrough of my Home Assistant configuration, I hav
 ## Installation
 **NEEDS THE [Alexa Media Player](https://github.com/custom-components/alexa_media_player) HACS Integration from Keaton Taylor and Alan Tse**
 
-Use [HACS](https://github.com/custom-components/hacs) or [download](https://github.com/UbhiTS/HASS-AlexaTalkingClock/tree/master/apps/alexa_talking_clock) the `alexa_talking_clock` directory from inside the `apps` directory here to your local `apps` directory, then add the configuration to enable the `alexa_talking_clock` module.
+Use [HACS](https://github.com/custom-components/hacs) or [download](https://github.com/UbhiTS/HASS-AlexaTalkingClock/tree/master/apps/alexa_talking_clock) the `alexa_talking_clock.py` from inside the `apps` directory to your local `apps` directory, and add the following configuration to enable the app.
 
 ## App Configuration (config/appdaemon/apps/apps.yaml)
 
@@ -32,17 +32,17 @@ alexa_talking_clock:
   alexas:
     - media_player.bedroom_alexa
     - media_player.kitchen_alexa
-  voice:
-    volume_offset: 0 # -40 to 4, default 0
-    pitch_offset: 0 # -33 to 50, default 0
-    rate: 100 # 20 to 250, default 100
-    whisper: false
   announcements:
     bell: true # for SONOS, set to False
     start_time: "07:30:00"
     end_time: "21:30:00"
     half_hour: true
     quarter_hour: true
+  voice: # for SONOS, remove this section
+    volume_offset: 0 # -40 to 4, default 0
+    pitch_offset: 0 # -33 to 50, default 0
+    rate: 100 # 20 to 250, default 100
+    whisper: false
   debug: false
 ```
 
