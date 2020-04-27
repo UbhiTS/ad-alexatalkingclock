@@ -51,15 +51,15 @@ key | optional | type | default | description
 `module` | False | string | alexa_talking_clock | The module name of the app.
 `class` | False | string | AlexaTalkingClock | The name of the Class.
 `alexas` | False | list | # alexa_media_players # | The Alexa device(s) to target for the time reminder speech. You need the Alexa Media Player integration alive and kickin before you install this app.
-`volume_offset` | True | int | 0 | Set between -40 and 4. Default 0
-`pitch_offset` | True | int | 0 | Set between -33 and 50. Default 0
-`rate` | True | int | 100 | Set between 20 to 250. Default 100
-`whisper` | True | bool | False | Whisper Mode. Set "Bell" to False and "Rate" to 50 for a creepy time announcement 
-`bell` | True | bool | True | Enable or disable the Alexa announcement bell before the time speech. For SONOS, set to False
-`start_time` | True | time | 07:30 | The time to start announcements. This is in 24h format.
-`end_time` | True | time | 21:30 | The time to end announcements. This is in 24h format.
-`half_hour` | True | bool | True | Announce every half hour (It's 8 AM, It's 8:30 AM, It's 9 AM)
-`quarter_hour` | True | bool | False | Announce every 15 minutes (It's 8 AM, It's 8:15 AM, It's 8:30 AM, It's 8:45 AM, It's 9 AM)
+`announcements\|bell` | True | bool | True | Enable or disable the Alexa announcement bell before the time speech. For SONOS, set to False
+`announcements\|start_time` | True | time | 07:30 | The time to start announcements. This is in 24h format.
+`announcements\|end_time` | True | time | 21:30 | The time to end announcements. This is in 24h format.
+`announcements\|half_hour` | True | bool | True | Announce every half hour (It's 8 AM, It's 8:30 AM, It's 9 AM)
+`announcements\|quarter_hour` | True | bool | False | Announce every 15 minutes (It's 8 AM, It's 8:15 AM, It's 8:30 AM, It's 8:45 AM, It's 9 AM)
+`voice\|volume_offset` | True | int | 0 | Set between -40 and 4. Default 0
+`voice\|pitch_offset` | True | int | 0 | Set between -33 and 50. Default 0
+`voice\|rate` | True | int | 100 | Set between 20 to 250. Default 100
+`voice\|whisper` | True | bool | False | Whisper Mode. Set "Bell" to False and "Rate" to 50 for a creepy time announcement 
 `debug` | True | bool | False | Announces time instantly when you save the apps.yaml. Also, when set, will not honor start and end times and speak throughout the day and night
 
 ## Thank you for your time! (get it ;)
