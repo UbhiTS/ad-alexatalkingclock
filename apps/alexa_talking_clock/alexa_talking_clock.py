@@ -141,15 +141,18 @@ class AlexaTalkingClock(hass.Hass):
       effects_speech = self.set_effects(time_speech)
       seconds = 0
       for alexa in self.alexas:
-        self.run_in(self.announce_time, seconds, alexa = alexa, title = time_speech, message = effects_speech)
+        self.run_in(self.announce_time, seconds, alexa = alexa, time_speech = time_speech, effects_speech = effects_speech)
         seconds = seconds + 5
 
   def announce_time(self, kwargs):
     alexa = kwargs['alexa']
     announce = "announce"
     method = "all"
+    time_speech = kwargs['time_speech']
+    effects_speech = kwargs['effects_speech']
+    
     title = "Home Assistant: Alexa Talking Clock"
-    message = kwargs['title']
+    message = time_speech
     
     if self.announce_bell == False:
       # no change in home screen
@@ -159,10 +162,10 @@ class AlexaTalkingClock(hass.Hass):
     if self.whisper or self.volume_offset != 0 or self.pitch_offset != 0 or self.rate != 100:
       # goes to a blank announcement screen and back
       method = "speak"
-      message = kwargs["message"]
+      message = effects_speech
       
     self.call_service("notify/alexa_media", data = {"type": announce, "method": method}, target = alexa, title = title, message = message)
-    self.log(f"TIME_ANNOUNCE {title}: {alexa}")
+    self.log(f"TIME_ANNOUNCE {time_speech}: {alexa.split('.')[1]}")
     
 
   def set_effects(self, time_speech):
