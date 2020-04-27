@@ -1,12 +1,11 @@
-# Alexa (& Friends) Talking Clock : AppDaemon (HASS) :chicken:
+# Alexa (& Friends) Talking Clock : AppDaemon HASS :chicken:
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
-## New in v2.0.0: 
-### Multiple Alexas (or Other Smart Speakers), Whisper Mode, Pitch, Volume, Rate, Bell & SONOS
+## New in v2.0.0: Multiple Smart Speakers, Whisper Mode, Pitch, Volume, Rate and Bell Controls
 #### Sonos: Set bell:false and remove the voice effects section (kudos to @5and0)
 #### Google Home: same as above (can someone please confirm?)
-NOTE: * **Please update your apps.yaml with the new configuration structure** *
+NOTE: :boom:**Please update your apps.yaml with the new configuration structure**:boom:
 
 Amazon Alexa (or other smart speakers) will keep on reminding you of the time from morning till night and also courteously greet with a good morning, good afternoon, and a good night & sweet dreams all without you having to lift a finger (or speak a word). Sweet!
 
