@@ -1,4 +1,4 @@
-# Alexa (& Friends) Talking Clock : AppDaemon HASS :chicken:
+# Alexa (& Friends) Talking Clock :chicken:
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
