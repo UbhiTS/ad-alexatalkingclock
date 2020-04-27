@@ -145,14 +145,17 @@ class AlexaTalkingClock(hass.Hass):
         seconds = seconds + 5
 
   def announce_time(self, kwargs):
-    announce = "tts"
+    alexa = kwargs['alexa']
+    announce = "announce"
     method = "all"
     title = kwargs['title']
     message = kwargs['title']
-    alexa = kwargs['alexa']
     
-    if self.announce_bell:
-      announce = "announce"
+    if self.announce_bell == False:
+      announce = "tts"
+      method = "all"
+    
+    if self.whisper or self.volume_offset != 0 or self.pitch_offset != 0 or self.rate != 100:
       method = "speak"
       message = kwargs["message"]
       
@@ -161,8 +164,8 @@ class AlexaTalkingClock(hass.Hass):
     
 
   def set_effects(self, time_speech):
-    prefix = ""
-    postfix = ""
+    prefix = "<speak>"
+    postfix = "</speak>"
     
     if self.whisper:
       prefix = prefix + "<amazon:effect name='whispered'>"
