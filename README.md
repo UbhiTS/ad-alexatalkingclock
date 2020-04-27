@@ -2,7 +2,7 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
-## New in v2.0.0: Multiple Speakers, Whisper Mode, Pitch, Volume, Rate and Bell Controls
+## New in v2.0.0: Multiple Speakers, Whisper, Pitch, Volume, Rate and Bell Controls
 #### Sonos: Set bell:false and remove the voice effects section (kudos to @5and0)
 #### Google Home: same as above (can someone please confirm?)
 NOTE: :boom:**Please update your apps.yaml with the new configuration structure**:boom:
