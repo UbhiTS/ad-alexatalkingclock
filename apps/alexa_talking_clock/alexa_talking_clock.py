@@ -135,21 +135,32 @@ class AlexaTalkingClock(hass.Hass):
 
   def time_announce(self, kwargs):
     now = datetime.datetime.now()
-    time_speech = self.time_to_text(now.hour, now.minute)
+    time_speech = self.get_time_speech(now.hour, now.minute)
     
     if time_speech is not None:
-      msg = self.set_speech_parameters(time_speech)
+      effects_speech = self.set_effects(time_speech)
       seconds = 0
       for alexa in self.alexas:
+        self.run_in(self.announce_time, seconds, alexa = alexa, title = time_speech, message = effects_speech)
         seconds = seconds + 5
-        self.run_in(self.announce_time, seconds, alexa = alexa, time_speech = time_speech, msg = msg)
 
   def announce_time(self, kwargs):
-    self.log(f"TIME_ANNOUNCE {kwargs['time_speech']}: {kwargs['alexa']}")
-    self.call_service("notify/alexa_media", data = {"type": "announce" if self.announce_bell else "tts", "method": "all"}, target = kwargs["alexa"], message = kwargs["msg"], title = kwargs["time_speech"])
+    announce = "tts"
+    method = "all"
+    title = kwargs['title']
+    message = kwargs['title']
+    alexa = kwargs['alexa']
+    
+    if self.announce_bell:
+      announce = "announce"
+      method = "speak"
+      message = kwargs["message"]
+      
+    self.call_service("notify/alexa_media", data = {"type": announce, "method": method}, target = alexa, title = title, message = message)
+    self.log(f"TIME_ANNOUNCE {title}: {alexa}")
+    
 
-
-  def set_speech_parameters(self, time_speech):
+  def set_effects(self, time_speech):
     prefix = ""
     postfix = ""
     
@@ -167,7 +178,7 @@ class AlexaTalkingClock(hass.Hass):
     return prefix + time_speech + postfix
 
 
-  def time_to_text(self, hour, minute):
+  def get_time_speech(self, hour, minute):
     
     prefix = ""
     postfix = ""
