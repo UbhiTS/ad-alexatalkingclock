@@ -21,7 +21,7 @@ Also, if you want to see a walkthrough of my Home Assistant configuration, I hav
 - [Home Automation on 'STEROIDS' : Video Walkthrough](https://youtu.be/qqktLE9_45A)
 
 ## Installation
-Needs the **[Alexa Media Player](https://github.com/custom-components/alexa_media_player)** or other TTS integration
+**Needs the [Alexa Media Player](https://github.com/custom-components/alexa_media_player) or other TTS integration**
 
 Use [HACS](https://github.com/custom-components/hacs) or [download](https://github.com/UbhiTS/HASS-AlexaTalkingClock/tree/master/apps/alexa_talking_clock) the `alexa_talking_clock.py` from inside the `apps` directory to your local `apps` directory, and add the following configuration to enable the app.
 
@@ -52,7 +52,7 @@ key | optional | type | default | description
 -- | -- | -- | -- | --
 `module` | False | string | alexa_talking_clock | The module name of the app.
 `class` | False | string | AlexaTalkingClock | The name of the Class.
-`alexas` | False | list | # alexa_media_players # | The Alexa or other Smart Speakers to target for the time reminder speech. You need the Alexa Media Player integration alive and kickin before you install this app.
+`alexas` | False | list | # alexa_media_players # | The Alexa or other Smart Speakers to target for the time reminder speech.
 `announcements\|bell` | True | bool | True | Enable or disable the Alexa announcement bell before the time speech. For Sonos or Google Home, set to False
 `announcements\|start_time` | True | time | 07:30 | The time to start announcements. This is in 24h format.
 `announcements\|end_time` | True | time | 21:30 | The time to end announcements. This is in 24h format.
