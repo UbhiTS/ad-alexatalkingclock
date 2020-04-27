@@ -148,7 +148,7 @@ class AlexaTalkingClock(hass.Hass):
     alexa = kwargs['alexa']
     announce = "announce"
     method = "all"
-    title = kwargs['title']
+    title = "Home Assistant: Alexa Talking Clock"
     message = kwargs['title']
     
     if self.announce_bell == False:
