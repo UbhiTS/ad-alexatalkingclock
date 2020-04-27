@@ -152,10 +152,12 @@ class AlexaTalkingClock(hass.Hass):
     message = kwargs['title']
     
     if self.announce_bell == False:
+      # no change in home screen
       announce = "tts"
       method = "all"
     
     if self.whisper or self.volume_offset != 0 or self.pitch_offset != 0 or self.rate != 100:
+      # goes to a blank announcement screen and back
       method = "speak"
       message = kwargs["message"]
       
