@@ -14,6 +14,7 @@ Please ⭐ this repo if you like my work and also check out my other repos like
 - [Alexa (& Sonos) Doorbell](https://github.com/UbhiTS/ad-alexadoorbell)
 - [Alexa (& Sonos) Door/Window Announce](https://github.com/UbhiTS/ad-alexadoorwindowannounce)
 - [Alexa (& Sonos) Smart Talking Thermostat](https://github.com/UbhiTS/ad-alexasmarttalkingthermostat)
+- [Auto 'Crappy Internet' Rebooter](https://github.com/UbhiTS/ad-autointernetrebooter)
 
 Also, if you want to see a walkthrough of my Home Assistant configuration, I have my video walkthrough on youtube below
 - [Home Automation on 'STEROIDS' : Video Walkthrough](https://youtu.be/qqktLE9_45A)
