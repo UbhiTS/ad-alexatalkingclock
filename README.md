@@ -21,7 +21,7 @@ Also, if you want to see a walkthrough of my Home Assistant configuration, I hav
 - [Home Automation on 'STEROIDS' : Video Walkthrough](https://youtu.be/qqktLE9_45A)
 
 ## Installation
-**Needs the [Alexa Media Player](https://github.com/custom-components/alexa_media_player) or other TTS integration**
+**Needs the [Alexa Media Player, Sonos](https://github.com/custom-components/alexa_media_player), Google Home or other smart speaker integration**
 
 Use [HACS](https://github.com/custom-components/hacs) or [download](https://github.com/UbhiTS/HASS-AlexaTalkingClock/tree/master/apps/alexa_talking_clock) the `alexa_talking_clock.py` from inside the `apps` directory to your local `apps` directory, and add the following configuration to enable the app.
 
