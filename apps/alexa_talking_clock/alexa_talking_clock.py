@@ -187,7 +187,7 @@ class AlexaTalkingClock(hass.Hass):
       
     self.call_service("tts/google_say", entity_id = google_home, message = message)
     
-    self.log(f"TIME_ANNOUNCE {time_speech}: {google_home.split('.')[1]}")
+    self.log(f"TIME_ANNOUNCE {message}: {google_home.split('.')[1]}")
     
 
   def get_time_speech(self, hour, minute):
