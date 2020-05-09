@@ -11,6 +11,9 @@ from datetime import datetime, time, timedelta
 #  alexas:
 #    - media_player.bedroom_alexa
 #    - media_player.kitchen_alexa
+#  google_homes:
+#    - media_player.bedroom_google_home
+#    - media_player.kitchen_google_home
 #  voice:
 #    volume_offset: 0 # -40 to 4, default 0
 #    pitch_offset: 0 # -33 to 50, default 0
@@ -28,7 +31,8 @@ class AlexaTalkingClock(hass.Hass):
 
   def initialize(self):
     
-    self.alexas = self.args["alexas"]
+    self.alexas = self.args["alexas"] if "alexas" in self.args else []
+    self.google_homes = self.args["google_homes"] if "google_homes" in self.args else []
     
     self.volume_offset = 0
     self.pitch_offset = 0
@@ -139,10 +143,16 @@ class AlexaTalkingClock(hass.Hass):
     minute = now.minute
     
     time_speech = self.get_time_speech(hour, minute)
-    effects_speech = self.set_effects(time_speech)
+    alexa_effects_speech = self.set_effects(time_speech)
+    
     delay = 0
     for alexa in self.alexas:
-      self.run_in(self.time_announce_alexa, delay, alexa = alexa, time_speech = time_speech, effects_speech = effects_speech)
+      self.run_in(self.time_announce_alexa, delay, alexa = alexa, time_speech = time_speech, effects_speech = alexa_effects_speech)
+      delay = delay + 5
+      
+    delay = 0
+    for google_home in self.google_homes:
+      self.run_in(self.time_announce_google_home, delay, google_home = google_home, time_speech = time_speech)
       delay = delay + 5
 
 
@@ -167,26 +177,18 @@ class AlexaTalkingClock(hass.Hass):
       message = effects_speech
       
     self.call_service("notify/alexa_media", data = {"type": announce, "method": method}, target = alexa, title = title, message = message)
+    
     self.log(f"TIME_ANNOUNCE {time_speech}: {alexa.split('.')[1]}")
     
 
-  def set_effects(self, time_speech):
-    prefix = "<speak>"
-    postfix = "</speak>"
-    
-    if self.whisper:
-      prefix = prefix + "<amazon:effect name='whispered'>"
-      postfix = "</amazon:effect>" + postfix
-
-    str_rate = str(self.rate)
-    str_pitch = "+" + str(self.pitch_offset) if self.pitch_offset >= 0 else str(self.pitch_offset)
-    str_volume = "+" + str(self.volume_offset) if self.volume_offset >= 0 else str(self.volume_offset)
-  
-    prefix = prefix + "<prosody rate='" + str_rate + "%' pitch='" + str_pitch + "%' volume='" + str_volume + "dB'>"
-    postfix = "</prosody>" + postfix
+  def time_announce_google_home(self, kwargs):
+    google_home = kwargs['google_home']
+    message = kwargs['time_speech']
       
-    return prefix + time_speech + postfix
-
+    self.call_service("tts/google_say", entity_id = google_home, message = message)
+    
+    self.log(f"TIME_ANNOUNCE {time_speech}: {google_home.split('.')[1]}")
+    
 
   def get_time_speech(self, hour, minute):
     
@@ -213,6 +215,24 @@ class AlexaTalkingClock(hass.Hass):
       time_speech = f"It's {hour}:{minute:02d} {ampm_str}."
     
     return prefix + " " + time_speech + " " + postfix
+
+
+  def set_effects(self, time_speech):
+    prefix = "<speak>"
+    postfix = "</speak>"
+    
+    if self.whisper:
+      prefix = prefix + "<amazon:effect name='whispered'>"
+      postfix = "</amazon:effect>" + postfix
+
+    str_rate = str(self.rate)
+    str_pitch = "+" + str(self.pitch_offset) if self.pitch_offset >= 0 else str(self.pitch_offset)
+    str_volume = "+" + str(self.volume_offset) if self.volume_offset >= 0 else str(self.volume_offset)
+  
+    prefix = prefix + "<prosody rate='" + str_rate + "%' pitch='" + str_pitch + "%' volume='" + str_volume + "dB'>"
+    postfix = "</prosody>" + postfix
+      
+    return prefix + time_speech + postfix
 
 
   # https://stackoverflow.com/questions/20518122/python-working-out-if-time-now-is-between-two-times
