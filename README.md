@@ -3,7 +3,6 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
 ## New in v2.0.0: 
-### Google Home Support (added new configuration.yaml parameter)
 ### Sonos Support: Set bell:false and remove the voice effects section (kudos to @5and0)
 ### Multiple Speakers, Whisper, Pitch, Volume, Rate and Bell Controls
 
@@ -23,7 +22,7 @@ Also, if you want to see a walkthrough of my Home Assistant configuration, I hav
 - [Home Automation on 'STEROIDS' : Video Walkthrough](https://youtu.be/qqktLE9_45A)
 
 ## Installation
-**Needs the [Alexa Media Player, Sonos](https://github.com/custom-components/alexa_media_player), Google Home or other smart speaker integration**
+**Needs the [Alexa Media Player or Sonos](https://github.com/custom-components/alexa_media_player) integration**
 
 Use [HACS](https://github.com/custom-components/hacs) or [download](https://github.com/UbhiTS/HASS-AlexaTalkingClock/tree/master/apps/alexa_talking_clock) the `alexa_talking_clock.py` from inside the `apps` directory to your local `apps` directory, and add the following configuration to enable the app.
 
@@ -36,9 +35,6 @@ alexa_talking_clock:
   alexas:
     - media_player.bedroom_alexa
     - media_player.kitchen_alexa
-  google_homes:
-    - media_player.bedroom_google_home
-    - media_player.kitchen_google_home
   announcements:
     bell: true # for SONOS, set to False
     start_time: "07:30:00"
@@ -58,7 +54,6 @@ key | optional | type | default | description
 `module` | False | string | alexa_talking_clock | The module name of the app.
 `class` | False | string | AlexaTalkingClock | The name of the Class.
 `alexas` | True | list | # alexa_media_players # | The Alexa (or Sonos) to target for the time reminder speech.
-`google_homes` | True | list | # google_tts # | The Google Home speaker to target for the time reminder speech.
 `announcements\|bell` | True | bool | True | Enable or disable the Alexa announcement bell before the time speech. For Sonos set to False
 `announcements\|start_time` | True | time | 07:30 | The time to start announcements. This is in 24h format.
 `announcements\|end_time` | True | time | 21:30 | The time to end announcements. This is in 24h format.
