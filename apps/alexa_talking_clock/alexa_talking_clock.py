@@ -75,11 +75,11 @@ class AlexaTalkingClock(hass.Hass):
     
     self.run_every(self.time_announce, self.next_start, (60 * self.frequency.interval))
     
-    log_message = f"INIT " + \
-      f"Start {self.time_start.strftime('%H:%M')}, " + \
-      f"End {self.time_end.strftime('%H:%M')}, " + \
-      f"Next {str(self.next_start.strftime('%H:%M'))}, " + \
-      f"Freq {str(self.frequency.announce_times)}"
+    log_message = f"\nINIT - ALEXA TALKING CLOCK\n" + \
+      f"  START     {self.time_start.strftime('%H:%M')}\n" + \
+      f"  END       {self.time_end.strftime('%H:%M')}\n" + \
+      f"  NEXT      {str(self.next_start.strftime('%H:%M'))}\n" + \
+      f"  FREQUENCY {str(self.frequency.announce_times)}\n"
     self.log(log_message)
 
     if self.debug: self.time_announce(None)
