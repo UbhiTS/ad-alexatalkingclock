@@ -75,12 +75,12 @@ class AlexaTalkingClock(hass.Hass):
     
     self.run_every(self.time_announce, self.next_start, (60 * self.frequency.interval))
     
-    log_message = f"\nINIT - ALEXA TALKING CLOCK\n" + \
+    log_message = f"\n**** INIT - ALEXA TALKING CLOCK ****\n" + \
       f"  START     {self.time_start.strftime('%H:%M')}\n" + \
       f"  END       {self.time_end.strftime('%H:%M')}\n" + \
       f"  NEXT      {str(self.next_start.strftime('%H:%M'))}\n" + \
       f"  FREQUENCY {str(self.frequency.announce_times)}\n"
-    self.log(log_message)
+    self.debug_log(log_message)
 
     if self.debug: self.time_announce(None)
     
@@ -167,7 +167,7 @@ class AlexaTalkingClock(hass.Hass):
       message = effects_speech
       
     self.call_service("notify/alexa_media", data = {"type": announce, "method": method}, target = alexa, title = title, message = message)
-    self.log(f"TIME_ANNOUNCE {time_speech}: {alexa.split('.')[1]}")
+    self.debug_log(f"TIME_ANNOUNCE {time_speech}: {alexa.split('.')[1]}")
     
 
   def set_effects(self, time_speech):
@@ -225,6 +225,10 @@ class AlexaTalkingClock(hass.Hass):
     
     return not result
 
+
+  def debug_log(self, message):
+    if self.debug:
+      self.log(message)
 
 class Frequency:
   
