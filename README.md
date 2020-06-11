@@ -1,10 +1,16 @@
-# Alexa (& Friends) Talking Clock :chicken: <img src="https://poa5qzspd7.execute-api.us-east-1.amazonaws.com/live/hypercounterimage/68f7d9511bb4405d9dd2b34615a45ae1/counter.png" />
+# Alexa (& Friends) Reminders & Talking Clock :chicken: <img src="https://poa5qzspd7.execute-api.us-east-1.amazonaws.com/live/hypercounterimage/68f7d9511bb4405d9dd2b34615a45ae1/counter.png" />
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
-## New in v2.0.0: 
-### Sonos Support: Set bell:false and remove the voice effects section (kudos to @5and0)
-### Multiple Speakers, Whisper, Pitch, Volume, Rate and Bell Controls
+## New Features and Updates - v3.0
+### User Defined Reminders
+Let Alexa be your personal assistant and give you personal reminders. Reminder Schedule can be Daily, Weekdays, Weekends, or Mon, Tue, Wed, Thu, Fri, Sat, Sun
+### Local Language
+Time Alerts and Reminders in your Local Language (see new confuration options)
+### Sonos Support
+Set bell:false and remove the voice effects section (kudos to @5and0)
+### Whisper, Pitch, Volume, Rate and Bell Controls
+### Multiple Speakers
 
 NOTE: :boom:**Please update your apps.yaml with the new configuration structure**:boom:
 
