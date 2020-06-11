@@ -3,10 +3,10 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
 ## New Features and Updates - v3.0
-### User Defined Reminders (new configuration option)
-Let Alexa be your personal assistant and give you personal reminders. Reminder Schedule can be Daily, Weekdays, Weekends, or Mon, Tue, Wed, Thu, Fri, Sat, Sun
-### Local Language (new configuration option)
-Time Alerts and Reminders in your Local Language
+### User Defined Reminders
+New Configuration Option: Let Alexa be your personal assistant and give you personal reminders. Reminder Schedule can be Daily, Weekdays, Weekends, or Mon, Tue, Wed, Thu, Fri, Sat, Sun
+### Local Language
+New Configuration Option: Time Alerts and Reminders in your Local Language
 ### Sonos Support
 Set bell:false and remove the voice effects section (kudos to @5and0)
 ### Whisper, Pitch, Volume, Rate and Bell Controls
