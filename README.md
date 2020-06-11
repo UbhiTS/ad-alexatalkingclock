@@ -40,7 +40,7 @@ alexa_talking_clock:
   class: AlexaTalkingClock
   alexas:
     - media_player.kitchen_alexa
-    - media_player.upper_big_bedroom_alexa
+    - media_player.master_bedroom_alexa
   announcements:
     bell: true  # for SONOS, set to False
     start_time: "07:30:00"
