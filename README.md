@@ -4,13 +4,15 @@
 
 ## New Features and Updates - v3.0
 ### User Defined Reminders
-New Configuration Option: Let Alexa be your personal assistant and give you personal reminders. Reminder Schedule can be Daily, Weekdays, Weekends, or Mon, Tue, Wed, Thu, Fri, Sat, Sun
+Let Alexa be your personal assistant and give you personal reminders. Reminder Schedule can be Daily, Weekdays, Weekends, or Mon, Tue, Wed, Thu, Fri, Sat, Sun
 ### Local Language
-New Configuration Option: Time Alerts and Reminders in your Local Language
+Time Alerts and Reminders in your Local Language
 ### Sonos Support
 Set bell:false and remove the voice effects section (kudos to @5and0)
 ### Whisper, Pitch, Volume, Rate and Bell Controls
+Set "Bell" to False and "Rate" to 50 for a creepy announcement. Awesome for Halloween, or just to scare someone!
 ### Multiple Speakers
+Target multiple speakers in your home with one app
 
 NOTE: :boom:**Please update your apps.yaml with the new configuration structure**:boom:
 
@@ -93,7 +95,7 @@ key | optional | type | default | description
 `voice\|volume_offset` | True | int | 0 | Set between -40 and 4. Default 0
 `voice\|pitch_offset` | True | int | 0 | Set between -33 and 50. Default 0
 `voice\|rate` | True | int | 100 | Set between 20 to 250. Default 100
-`voice\|whisper` | True | bool | False | Whisper Mode. Set "Bell" to False and "Rate" to 50 for a creepy time announcement 
+`voice\|whisper` | True | bool | False | Whisper Mode 
 `reminders\|schedule` | True | schedule, time |  | Reminder Schedule. The frequency can be **daily, weekdays, weekends, mon, tue, wed, thu, fri, sat, sun**
 `reminders\|reminder` | True | text |  | The text for Alexa to speak at the defined schedule. You can use **{day} {date} {time}** placeholders within the text and they will be replaced with actual values when played
 `debug` | True | bool | False | Announces time instantly when you save the apps.yaml. Also, when set, will not honor start and end times and speak throughout the day and night
