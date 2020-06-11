@@ -47,13 +47,13 @@ alexa_talking_clock:
     end_time: "21:30:00"
     half_hour: true
     quarter_hour: true
-    default_speech: "It's {time}." # {day} {date} {time} 
+    default_speech: "It's {time}." # {day} {date} and {time} can be used. Can be defined in your local language
   voice: # for SONOS, remove this section
     volume_offset: 0 # -40 to 4, default 0
     pitch_offset: 0 # -33 to 50, default 0
     rate: 100 # 20 to 250, default 100
     whisper: false
-  reminders: 
+  reminders:
     # daily
     - schedule: "daily, 07:00:00" 
       reminder: "Good morning. Today is {day}, {date}, and it's {time}."
