@@ -3,10 +3,10 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
 ## New Features and Updates - v3.0
-### User Defined Reminders
+### User Defined Reminders (new configuration option)
 Let Alexa be your personal assistant and give you personal reminders. Reminder Schedule can be Daily, Weekdays, Weekends, or Mon, Tue, Wed, Thu, Fri, Sat, Sun
-### Local Language
-Time Alerts and Reminders in your Local Language (see new confuration options)
+### Local Language (new configuration option)
+Time Alerts and Reminders in your Local Language
 ### Sonos Support
 Set bell:false and remove the voice effects section (kudos to @5and0)
 ### Whisper, Pitch, Volume, Rate and Bell Controls
@@ -18,7 +18,7 @@ Amazon Alexa, Google Home, Sonos (or other smart speakers) will keep on remindin
 
 Please ⭐ this repo if you like my work and also check out my other repos like
 - [Home Assistant 'STEROIDS' Configuration](https://github.com/UbhiTS/ha-config-ataraxis)
-- [Alexa (& Friends) Talking Clock](https://github.com/UbhiTS/ad-alexatalkingclock)
+- [Alexa (& Friends) Reminders & Talking Clock](https://github.com/UbhiTS/ad-alexatalkingclock)
 - [Alexa (& Friends) Doorbell](https://github.com/UbhiTS/ad-alexadoorbell)
 - [Alexa (& Friends) Door/Window Announce](https://github.com/UbhiTS/ad-alexadoorwindowannounce)
 - [Alexa (& Friends) Smart Talking Thermostat](https://github.com/UbhiTS/ad-alexasmarttalkingthermostat)
