@@ -70,6 +70,8 @@ alexa_talking_clock:
     - schedule: "weekends, 09:30:00"
       reminder: "It's {time}. Question. Are you planning to go for a run or a hike today?"
     # mon, tue, wed, thu, fri, sat, sun
+    - schedule: "tue, 21:00:00"
+      reminder: "It's {time}. Quick Reminder. Did you take out the garbage?"
     - schedule: "wed, 09:30:00"
       reminder: "It's {time}. What day is it? It's Hump Day! Yaaaay!"
     - schedule: "fri, 04:30:00"
