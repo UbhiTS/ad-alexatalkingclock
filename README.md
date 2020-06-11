@@ -57,7 +57,7 @@ alexa_talking_clock:
     whisper: false
   reminders:
     # daily
-    - schedule: "daily, 07:00:00" 
+    - schedule: "daily, 07:30:00" 
       reminder: "Good morning. Today is {day}, {date}, and it's {time}."
     - schedule: "daily, 12:00:00"
       reminder: "Good afternoon. Today is {day}, {date}, and it's {time}."
