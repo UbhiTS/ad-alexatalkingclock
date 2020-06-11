@@ -77,7 +77,7 @@ alexa_talking_clock:
       reminder: "It's {time}. What day is it? It's Hump Day! Yaaaay!"
     - schedule: "fri, 04:30:00"
       reminder: "The weekend is almost here. Better plan it now, or waste it forever!"
-  debug: true
+  debug: false
 ```
 
 key | optional | type | default | description
