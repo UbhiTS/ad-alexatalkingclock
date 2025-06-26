@@ -24,6 +24,11 @@ import calendar
 #    half_hour: true
 #    quarter_hour: true
 #  reminders: 
+#      # frequency options: daily, weekdays, weekends, mon, tue, wed, thu, fri, sat, sun
+#      # IMPORTANT NOTE: ensure you set the reminder times to trigger at the announcement times only. See below for more details. 
+#      #   if you set a reminder at 08:15:00, or 08:45:00 it will only trigger if the announcements > quarter_hour is set to true, else it will get ignored.
+#      #   if you set a reminder at 08:30:00, it will only trigger if the announcements > half_hour is set to true, else it will get ignored.
+
 #    # daily
 #    - schedule: "daily, 07:30:00" 
 #      reminder: "Good morning. Today is {day}, {date}, and it's {time}."
@@ -96,7 +101,7 @@ class AlexaTalkingClock(hass.Hass):
     if self.rate < 20: self.rate = 20
     if self.rate > 250: self.rate = 250
     
-    self.run_in(self.configure, 0)
+    self.run_in(self.configure, 2.5) # wait for Home Assistant to start and alexa media player to be ready
     
     
   def configure(self, kwargs):
@@ -111,7 +116,7 @@ class AlexaTalkingClock(hass.Hass):
       f"  END       {self.time_end.strftime('%H:%M')}\n" + \
       f"  NEXT      {str(self.next_start.strftime('%H:%M'))}\n" + \
       f"  FREQUENCY {str(self.frequency.announce_times)}\n"
-    self.debug_log(log_message)
+    self.log(log_message)
 
     if self.debug: self.time_announce(None)
     
@@ -194,8 +199,8 @@ class AlexaTalkingClock(hass.Hass):
       method = "speak"
       message = effects_speech
       
-    self.call_service("notify/alexa_media", data = {"type": announce, "method": method}, target = alexa, title = title, message = message)
-    self.debug_log(f"TIME_ANNOUNCE {time_speech}: {alexa.split('.')[1]}")
+    self.call_service("notify/alexa_media", data = {"type": announce, "method": method}, service_data = {'target': alexa}, title = title, message = message)
+    self.log(f"TIME_ANNOUNCE {time_speech}: {alexa.split('.')[1]}")
     
 
   def set_effects(self, time_speech):
