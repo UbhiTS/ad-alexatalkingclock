@@ -48,7 +48,7 @@ alexa_talking_clock:
     start_time: "07:30:00"
     end_time: "21:30:00"
     half_hour: true
-    quarter_hour: true
+    quarter_hour: false
     default_speech: "It's {time}." # {day} {date} and {time} can be used. Can be defined in your local language
   voice: # for SONOS, remove this section
     volume_offset: 0 # -40 to 4, default 0
@@ -56,6 +56,10 @@ alexa_talking_clock:
     rate: 100 # 20 to 250, default 100
     whisper: false
   reminders:
+  #      # frequency options: daily, weekdays, weekends, mon, tue, wed, thu, fri, sat, sun
+  #      # IMPORTANT NOTE: ensure you set the reminder times to trigger at the announcement times only. See below for more details. 
+  #      #   if you set a reminder at 08:15:00, or 08:45:00 it will only trigger if the announcements > quarter_hour is set to true, else it will get ignored.
+  #      #   if you set a reminder at 08:30:00, it will only trigger if the announcements > half_hour is set to true, else it will get ignored.
     # daily
     - schedule: "daily, 07:30:00" 
       reminder: "Good morning. Today is {day}, {date}, and it's {time}."
@@ -96,7 +100,7 @@ key | optional | type | default | description
 `voice\|pitch_offset` | True | int | 0 | Set between -33 and 50. Default 0
 `voice\|rate` | True | int | 100 | Set between 20 to 250. Default 100
 `voice\|whisper` | True | bool | False | Whisper Mode 
-`reminders\|schedule` | True | schedule, time |  | Reminder Schedule. The frequency can be **daily, weekdays, weekends, mon, tue, wed, thu, fri, sat, sun**
+`reminders\|schedule` | True | schedule, time |  | Reminder Schedule. The frequency can be **daily, weekdays, weekends, mon, tue, wed, thu, fri, sat, sun**. IMPORTANT NOTE: ensure you set the reminder times to trigger at the announcement times only. See the above example for more details.
 `reminders\|reminder` | True | text |  | The text for Alexa to speak at the defined schedule. You can use **{day} {date} {time}** placeholders within the text and they will be replaced with actual values when played
 `debug` | True | bool | False | Announces time instantly when you save the apps.yaml. Also, when set, will not honor start and end times and speak throughout the day and night
 
